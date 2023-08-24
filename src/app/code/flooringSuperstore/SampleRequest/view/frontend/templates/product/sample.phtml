@@ -1,0 +1,52 @@
+<script type="text/javascript">
+require(['jquery'], function($) {
+    $(document).ready(function() {
+        $('.add-sample').on('click', function() {
+            var productId = $(this).data('product-id');
+            $.ajax({
+                url: '<?php echo $block->getUrl('samples/add/index');
+                data: { product_id: productId },
+                type: 'POST',
+                dataType: 'json',
+                success: function(response) {
+                    // Handle success response, update UI
+                },
+                error: function() {
+                    // Handle error response
+                }
+            });
+        });
+
+        $('.remove-sample').on('click', function() {
+            var productId = $(this).data('product-id');
+            $.ajax({
+                url: '<?php echo $block->getUrl('samples/remove/index'); ?>',
+                data: { product_id: productId },
+                type: 'POST',
+                dataType: 'json',
+                success: function(response) {
+                    // Handle success response, update UI
+                },
+                error: function() {
+                    // Handle error response
+                }
+            });
+        });
+
+        $('.submit-samples').on('click', function() {
+            $.ajax({
+                url: '<?php echo $block->getUrl('samples/submit/index'); ?>',
+                type: 'POST',
+                dataType: 'json',
+                success: function(response) {
+                    // Handle success response, update UI
+                },
+                error: function() {
+                    // Handle error response
+                }
+            });
+        });
+    });
+});
+</script>
+

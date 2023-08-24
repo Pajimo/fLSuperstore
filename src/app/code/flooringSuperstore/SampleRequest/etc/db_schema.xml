@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sample_request" resource="default" engine="innodb" comment="Sample Request Table">
+        <column name="request_id" xsi:type="int" identity="true" nullable="false" primary="true" comment="Request ID" />
+        <column name="product_id" xsi:type="int" nullable="false" comment="Product ID" />
+        <constraint referenceId="PRIMARY" xsi:type="primary">
+            <column name="request_id" />
+        </constraint>
+    </table>
+</schema>
